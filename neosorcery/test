@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+echo "Testing neosorcery UI..."
+if command -v neosorcery >/dev/null; then
+  echo "Neosorcery is available."
+else
+  echo "Neosorcery not found."
+  exit 1
+fi

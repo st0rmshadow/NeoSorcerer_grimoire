@@ -1,0 +1,5 @@
+SPELL_NAME="neosorcery"
+SPELL_VERSION="0.1.0"
+SPELL_SOURCE_TYPE="git"
+SPELL_GIT_URL="https://github.com/st0rmshadow/neosorcery.git"
+SPELL_GIT_BRANCH="main"

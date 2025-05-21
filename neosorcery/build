@@ -1,0 +1,16 @@
+#!/usr/bin/env zsh
+source ./SPELL
+
+BUILD_DIR="/tmp/build_$SPELL_NAME"
+mkdir -p "$BUILD_DIR"
+cd "$BUILD_DIR" || exit 1
+
+echo "Cloning neosorcery from $SPELL_GIT_URL..."
+git clone --branch "$SPELL_GIT_BRANCH" "$SPELL_GIT_URL" "$SPELL_NAME"
+cd "$SPELL_NAME" || exit 1
+
+echo "Building neosorcery..."
+make
+
+echo "Installing neosorcery and bundled tools..."
+sudo make install
