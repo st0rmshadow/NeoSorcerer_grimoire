@@ -1,0 +1,25 @@
+#!/usr/bin/env zsh
+source ./SPELL
+
+BUILD_DIR="/tmp/build_$SPELL_NAME"
+mkdir -p "$BUILD_DIR"
+cd "$BUILD_DIR" || exit 1
+
+echo "Fetching $SPELL_NAME..."
+curl -L -o "${SPELL_NAME}-${SPELL_VERSION}.tar.xz" "$SPELL_URL"
+
+echo "Verifying checksum..."
+echo "$SPELL_CHECKSUM  ${SPELL_NAME}-${SPELL_VERSION}.tar.xz" | sha256sum -c - || exit 1
+
+echo "Extracting..."
+tar -xf "${SPELL_NAME}-${SPELL_VERSION}.tar.xz"
+cd "${SPELL_NAME}-${SPELL_VERSION}" || exit 1
+
+echo "Configuring..."
+./configure --prefix=/usr
+
+echo "Compiling..."
+make -j$(nproc)
+
+echo "Installing..."
+sudo make install

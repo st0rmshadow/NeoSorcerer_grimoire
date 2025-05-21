@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+echo "Testing zsh installation..."
+if command -v zsh >/dev/null; then
+  echo "Zsh installed successfully."
+else
+  echo "Zsh installation failed."
+  exit 1
+fi

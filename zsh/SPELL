@@ -1,0 +1,5 @@
+SPELL_NAME="zsh"
+SPELL_VERSION="5.9"
+SPELL_SOURCE_TYPE="tarball"
+SPELL_URL="https://sourceforge.net/projects/zsh/files/zsh/5.9/zsh-5.9.tar.xz/download"
+SPELL_CHECKSUM="sha256:e8f3ea6d5e6fc639e24d5efeb9e8f1e4d31b5e122d8a2f7c4c8f3e0217edb9d1"
