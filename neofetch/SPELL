@@ -1,0 +1,5 @@
+SPELL_NAME="neofetch"
+SPELL_VERSION="latest"
+SPELL_SOURCE_TYPE="tarball"
+SPELL_URL="https://example.com/neofetch.tar.gz"
+SPELL_CHECKSUM="sha256:PLACEHOLDER"

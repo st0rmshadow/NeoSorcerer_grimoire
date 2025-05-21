@@ -1,0 +1,5 @@
+SPELL_NAME="findutils"
+SPELL_VERSION="latest"
+SPELL_SOURCE_TYPE="tarball"
+SPELL_URL="https://example.com/findutils.tar.gz"
+SPELL_CHECKSUM="sha256:PLACEHOLDER"

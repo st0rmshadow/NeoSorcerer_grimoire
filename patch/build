@@ -1,0 +1,22 @@
+#!/usr/bin/env zsh
+source ./SPELL
+
+BUILD_DIR="/tmp/build_$SPELL_NAME"
+mkdir -p "$BUILD_DIR"
+cd "$BUILD_DIR" || exit 1
+
+echo "Fetching $SPELL_NAME..."
+curl -LO "$SPELL_URL"
+
+echo "Extracting..."
+tar -xf *.tar.* || exit 1
+cd $SPELL_NAME-* || exit 1
+
+echo "Configuring..."
+./configure --prefix=/usr
+
+echo "Compiling..."
+make -j$(nproc)
+
+echo "Installing (may require sudo)..."
+sudo make install
